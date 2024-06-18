@@ -20,4 +20,6 @@ I went with **JavaScript** for this project because:
 
 ### extra
 
+[Try it here](https://juanjopastor.github.io/emom/).
+
 Hope you liked it. But remember, Google Gemini wrote this article too!
