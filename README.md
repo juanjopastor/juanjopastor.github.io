@@ -1,6 +1,7 @@
 # Juanjo Pastor
 
 - me
+	- C++ // Python
 	- [github](https://github.com/juanjopastor)
 
 - comments
