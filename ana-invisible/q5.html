@@ -45,15 +45,22 @@
 </style>
 </head>
 <body>
-    <h1>INCORRECTO!!!</h1>
-    <h2>Bro, que es muy fácil!!</h2>
+    <h1>Te flipa hacer...</h1>
     <div class="opciones">
-        <button onclick="verificarRespuesta('Mala')">Vuelve a intentarlo</button>
+        <button onclick="verificarRespuesta('R1')">Currar en Creu Roja</button>
+        <button onclick="verificarRespuesta('B')">Hacer Crochet</button>
+        <button onclick="verificarRespuesta('R2')">Meter datos a IMAP</button>
     </div>
 
 <script>
 function verificarRespuesta(respuesta) {
-    window.location.href = 'q3.html';
+    if (respuesta === 'B') {
+        window.location.href = 'fin.html';
+    } else if (respuesta === 'R1') {
+        window.location.href = 'solucion.html?msg=Currar?&sub=En serio has contestado eso?&retry=q5.html';        
+    } else if (respuesta === 'R2') {
+        window.location.href = 'solucion.html?msg=¿Volcar datos?&sub=Eso es fake&retry=q5.html';
+    }
 }
 </script>
 </body>

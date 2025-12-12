@@ -45,21 +45,21 @@
 </style>
 </head>
 <body>
-    <h1>¿Cuál es la capital del Reino?</h1>
+    <h1>¿Quien és el/la compi més molón/a?</h1>
     <div class="opciones">
-        <button onclick="verificarRespuesta('M')">Barcelona</button>
-        <button onclick="verificarRespuesta('B')">Madrid</button>
-        <button onclick="verificarRespuesta('M')">Alcorcón</button>
+        <button onclick="verificarRespuesta('R1')">Miguel</button>
+        <button onclick="verificarRespuesta('B')">Eli</button>
+        <button onclick="verificarRespuesta('R2')">Guillem</button>
     </div>
 
 <script>
 function verificarRespuesta(respuesta) {
     if (respuesta === 'B') {
-        // Aquí podrías redirigir a la siguiente pregunta
-        // alert('¡Correcto! Pasamos a la siguiente pregunta.');
-        window.location.href = 'b1.html';
-    } else {
-        window.location.href = 'f1.html';
+        window.location.href = 'solucion.html?msg=¡¡¡ ELI !!!&sub=Estás que lo revientas!&retry=q2.html&lbl=Siguiente pregunta';
+    } else if (respuesta === 'R1') {
+        window.location.href = 'solucion.html?msg=¿MIGUEL?&sub=Que cringe!&retry=q1.html';        
+    } else if (respuesta === 'R2') {
+        window.location.href = 'solucion.html?msg=¿GUILLEM?&sub=Es un NPC!&retry=q1.html';
     }
 }
 </script>

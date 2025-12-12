@@ -45,21 +45,21 @@
 </style>
 </head>
 <body>
-    <h1>¿De donde es el Xato?</h1>
+    <h1>¿De donde es el Xató?</h1>
     <div class="opciones">
-        <button onclick="verificarRespuesta('M')">Sitges</button>
-        <button onclick="verificarRespuesta('M')">Vendrell</button>
+        <button onclick="verificarRespuesta('R1')">Sant Pere de Ribes</button>
+        <button onclick="verificarRespuesta('R2')">Sitges</button>
         <button onclick="verificarRespuesta('B')">Vilanova</button>
     </div>
 
 <script>
 function verificarRespuesta(respuesta) {
     if (respuesta === 'B') {
-        // Aquí podrías redirigir a la siguiente pregunta
-        // alert('¡Correcto! Pasamos a la siguiente pregunta.');
-        window.location.href = 'fin.html';
-    } else {
-        window.location.href = 'f3.html';
+        window.location.href = 'solucion.html?msg=¡¡¡ VILANOVA I LA GELTRÚ !!&sub=No hay color!&retry=q4.html&lbl=Siguiente pregunta';
+    } else if (respuesta === 'R1') {
+        window.location.href = 'solucion.html?msg=¿Ribes?&sub=Lache!&retry=q3.html';
+    } else if (respuesta === 'R2') {
+        window.location.href = 'solucion.html?msg=¿Sitges?&sub=Ni de coña!&retry=q3.html';
     }
 }
 </script>

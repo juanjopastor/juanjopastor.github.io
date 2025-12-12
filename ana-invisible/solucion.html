@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amigo invisible</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100svh; /* mejor para móvil que 100vh */
+    margin: 0;
+    text-align: center;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  h2 {
+    font-size: 1.3rem;
+    margin: 0 0 20px;
+    color: #555;
+  }
+  .opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 400px;
+  }
+  button {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform .06s ease;
+  }
+  button:hover { background-color: #45a049; }
+  button:active { transform: translateY(1px); }
+
+  /* Pequeñas mejoras para pantallas muy pequeñas */
+  @media (max-width: 380px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.1rem; }
+    button { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+  <h1 id="titulo">INCORRECTO!!!</h1>
+  <h2 id="subtitulo">Bro, que es muy fácil!!</h2>
+
+  <div class="opciones">
+    <button id="btn-retry">Vuelve a intentarlo</button>
+  </div>
+
+<script>
+  // Lee parámetros de la URL con valores por defecto
+  function getParams() {
+    const usp = new URLSearchParams(window.location.search);
+    return {
+      msg: usp.get('msg') || 'INCORRECTO!!!',
+      sub: usp.get('sub') || 'Bro, que es muy fácil!!',
+      retry: usp.get('retry') || 'q2.html',
+      lbl: usp.get('lbl') || 'Vuelve a intentarlo'
+    };
+  }
+
+  (function init() {
+    const { msg, sub, retry, lbl } = getParams();
+
+    // Inserta los textos en el HTML
+    document.getElementById('titulo').textContent = msg;
+    document.getElementById('subtitulo').textContent = sub;
+    const btn = document.getElementById('btn-retry');
+    btn.textContent = lbl;
+
+    // Navega a la página indicada en "retry"
+    btn.addEventListener('click', () => {
+      window.location.href = retry;
+    });
+  })();
+</script>
+</body>
+</html>

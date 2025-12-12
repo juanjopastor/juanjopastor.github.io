@@ -45,15 +45,22 @@
 </style>
 </head>
 <body>
-    <h1>INCORRECTO!!!</h1>
-    <h2>Bro, que es muy fácil!!</h2>
+    <h1>¿A quien han multado más con el coche de Creu Roja?</h1>
     <div class="opciones">
-        <button onclick="verificarRespuesta('Mala')">Vuelve a intentarlo</button>
+        <button onclick="verificarRespuesta('R1')">Susana</button>
+        <button onclick="verificarRespuesta('R2')">Miguel</button>
+        <button onclick="verificarRespuesta('B')">Anna</button>
     </div>
 
 <script>
 function verificarRespuesta(respuesta) {
-    window.location.href = 'q1.html';
+    if (respuesta === 'B') {
+        window.location.href = 'solucion.html?msg=¡¡¡ ANNA !!&sub=Exposeada!&retry=q5.html&lbl=Siguiente pregunta';
+    } else if (respuesta === 'R1') {
+        window.location.href = 'solucion.html?msg=¿Susana?&sub=No sabe ni arrancar un coche!&retry=q4.html';
+    } else if (respuesta === 'R2') {
+        window.location.href = 'solucion.html?msg=¿Miguel?&sub=Ojo que te funa!!&retry=q4.html';
+    }
 }
 </script>
 </body>

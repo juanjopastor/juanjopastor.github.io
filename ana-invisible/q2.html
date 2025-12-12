@@ -45,21 +45,21 @@
 </style>
 </head>
 <body>
-    <h1>¿Quien manda más en Cruz Roja?</h1>
+    <h1>¿A qué le das caña?</h1>
     <div class="opciones">
-        <button onclick="verificarRespuesta('B')">Miguel</button>
-        <button onclick="verificarRespuesta('M')">Susana</button>
-        <button onclick="verificarRespuesta('M')">Quim</button>
+        <button onclick="verificarRespuesta('B')">Gildas</button>
+        <button onclick="verificarRespuesta('R1')">Guisantes</button>
+        <button onclick="verificarRespuesta('R2')">Sopa</button>
     </div>
 
 <script>
 function verificarRespuesta(respuesta) {
     if (respuesta === 'B') {
-        // Aquí podrías redirigir a la siguiente pregunta
-        // alert('¡Correcto! Pasamos a la siguiente pregunta.');
-        window.location.href = 'b2.html';
-    } else {
-        window.location.href = 'f2.html';
+        window.location.href = 'solucion.html?msg=¡¡¡ GUILDAS !!!&sub=Me flipan a tope!&retry=q3.html&lbl=Siguiente pregunta';
+    } else if (respuesta === 'R1') {
+        window.location.href = 'solucion.html?msg=¿Guisantes?&sub=No me cuadra&retry=q2.html';        
+    } else if (respuesta === 'R2') {
+        window.location.href = 'solucion.html?msg=¿Sopa?&sub=Meh!&retry=q2.html';
     }
 }
 </script>
